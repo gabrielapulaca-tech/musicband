@@ -25,6 +25,10 @@ if (menuToggle && siteNav) {
 		if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
 	});
 
+	window.addEventListener('resize', () => {
+		if (window.innerWidth > 760 && siteNav.classList.contains('open')) closeMenu();
+	}, { passive: true });
+
 	document.addEventListener('keydown', (event) => {
 		if (event.key === 'Escape' && siteNav.classList.contains('open')) {
 			closeMenu();
