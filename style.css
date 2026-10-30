@@ -208,21 +208,24 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 .community-body p { color: var(--muted); font-size: 13px; line-height: 1.65; min-height: 85px; }
 .community-body a { color: var(--orange); font-size: 11px; font-weight: 700; }
 .inspiration-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.instrument-library { display: grid; gap: 24px; }
-.instrument-family { background: #332c25; border-top: 1px solid rgba(200,147,62,.45); padding: 28px; }
-.featured-family { background: #4b352b; }
-.family-cover { height: 280px; overflow: hidden; position: relative; }
-.family-cover::after { background: linear-gradient(transparent, rgba(0,0,0,.75)); content: ''; inset: 0; position: absolute; }
-.family-cover img { height: 100%; object-fit: cover; width: 100%; }
-.family-cover > span { bottom: 22px; color: white; font-family: var(--serif); font-size: clamp(32px, 5vw, 58px); left: 28px; position: absolute; z-index: 1; }
-.instrument-family > p { color: #c7bdb1; margin: 22px 0; }
-.family-list { display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.family-list a { background: rgba(255,255,255,.055); border-left: 3px solid var(--gold); display: flex; flex-direction: column; min-height: 125px; padding: 18px; transition: background .25s ease, transform .25s ease; }
-.family-list a:hover { background: var(--orange); transform: translateY(-4px); }
+.instrument-library { display: grid; gap: 28px; }
+.instrument-family { background: linear-gradient(145deg, #332c25, #29241f); border: 1px solid rgba(200,147,62,.22); border-top: 4px solid var(--gold); box-shadow: 0 24px 55px rgba(0,0,0,.22); padding: 28px; }
+.featured-family { background: linear-gradient(145deg, #4b352b, #332821); }
+.family-cover { border-radius: 2px; height: 280px; overflow: hidden; position: relative; }
+.family-cover::after { background: linear-gradient(180deg, transparent 28%, rgba(20,17,14,.88)); content: ''; inset: 0; position: absolute; }
+.family-cover img { filter: saturate(.88) contrast(1.05); height: 100%; object-fit: cover; transition: filter .5s ease, transform .5s ease; width: 100%; }
+.instrument-family:hover .family-cover img { filter: saturate(1.05) contrast(1.05); transform: scale(1.025); }
+.family-cover > span { bottom: 22px; color: white; font-family: var(--serif); font-size: clamp(32px, 5vw, 58px); left: 28px; letter-spacing: .5px; position: absolute; text-shadow: 0 3px 18px rgba(0,0,0,.55); z-index: 1; }
+.instrument-family > p { border-left: 2px solid var(--gold); color: #d4cabd; font-size: 13px; line-height: 1.7; margin: 22px 0 18px; padding-left: 14px; }
+.family-list { display: grid; gap: 14px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.family-list a { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); border-left: 3px solid var(--gold); display: flex; flex-direction: column; justify-content: space-between; min-height: 125px; padding: 18px 20px; position: relative; transition: background .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease; }
+.family-list a::after { bottom: 17px; color: var(--gold); content: '↗'; font-size: 17px; opacity: .75; position: absolute; right: 18px; transition: opacity .25s ease, transform .25s ease; }
+.family-list a:hover { background: linear-gradient(135deg, #a74a29, var(--orange)); border-color: rgba(255,255,255,.18); box-shadow: 0 12px 24px rgba(0,0,0,.22); transform: translateY(-4px); }
+.family-list a:hover::after { color: white; opacity: 1; transform: translate(2px,-2px); }
 .family-list a { overflow: hidden; }
-.instrument-thumb { height: 105px; margin: -18px -18px 14px; object-fit: cover; width: calc(100% + 36px); }
-.family-list strong { font-family: var(--serif); font-size: 19px; font-weight: 400; }
-.family-list span { color: #c7bdb1; font-size: 12px; line-height: 1.55; margin-top: 8px; }
+.instrument-thumb { display: none; }
+.family-list strong { color: #fffaf2; font-family: var(--serif); font-size: 19px; font-weight: 400; letter-spacing: .25px; }
+.family-list span { color: #c7bdb1; font-size: 12px; line-height: 1.55; margin: 8px 25px 0 0; }
 .family-list a:hover span { color: #fff; }
 .foundation-group { border-top: 1px solid var(--line); margin-top: 55px; padding-top: 38px; }
 .foundation-group h3 { font-family: var(--serif); font-size: 30px; font-weight: 400; margin-bottom: 25px; }
